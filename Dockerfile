@@ -32,9 +32,9 @@ RUN apk add --no-cache \
 RUN pecl install \
     imagick \
     xdebug
-RUN git clone https://github.com/squizlabs/PHP_CodeSniffer.git \
-    cd PHP_CodeSniffer \
-    pear install package.xml
+RUN git clone https://github.com/squizlabs/PHP_CodeSniffer.git
+RUN cd PHP_CodeSniffer
+RUN pear install package.xml
 
 # Install and enable php extensions
 RUN docker-php-ext-enable \
