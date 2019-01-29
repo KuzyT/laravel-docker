@@ -1,4 +1,4 @@
-FROM php:alpine
+FROM php:7.2-alpine
 
 # Install dev dependencies
 RUN apk add --no-cache --virtual .build-deps \
@@ -31,13 +31,13 @@ RUN apk add --no-cache \
 # Install PECL and PEAR extensions
 RUN pecl install \
     imagick \
-    xdebug-2.6.0
+    xdebug
 RUN pear install PHP_CodeSniffer
 
 # Install and enable php extensions
 RUN docker-php-ext-enable \
     imagick \
-    xdebug-2.6.0
+    xdebug
 RUN docker-php-ext-install \
     curl \
     iconv \
