@@ -31,13 +31,13 @@ RUN apk add --no-cache \
 # Install PECL and PEAR extensions
 RUN pecl install \
     imagick \
-    xdebug-stable
+    xdebug-2.6.0
 RUN pear install PHP_CodeSniffer
 
 # Install and enable php extensions
 RUN docker-php-ext-enable \
     imagick \
-    xdebug-stable
+    xdebug-2.6.0
 RUN docker-php-ext-install \
     curl \
     iconv \
